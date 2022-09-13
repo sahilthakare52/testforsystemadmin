@@ -1,5 +1,9 @@
 #! /bin/bash
 
+echo "make sure your user is either root or having sudo access"
+
+sleep 5
+
 echo "===================================================================================\n
       ==================================================================================="
 
@@ -32,3 +36,7 @@ echo "Adding server block to transfer all the http requests to https for https:/
 
 ## adding server block to transfer all the http requests to https for https://demo.algonquainlanguages.ca
 sudo cp demo.conf /etc/nginx/conf.d/
+
+echo "=================##############Installation successful#################"
+
+echo " use curl localhost:9000 to check the website, also you can use serverIP:9000 to check the website"
