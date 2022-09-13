@@ -16,17 +16,17 @@ output=$?
 
 echo "building the application using docker compose......."
 
-docker compose up -d 
+sudo docker compose up -d 
 
 ## adding server block to transfer all the http requests to https for https://demo.algonquainlanguages.ca
-touch /etc/nginx/conf.d/demo.conf
-echo "server {
+sudo touch /etc/nginx/conf.d/demo.conf
+sudo echo "server {
     listen 80;
     server_name demo.algonquainlanguages.ca;
     return 301 https://demo.algonquainlanguages.ca$request_uri;
 }" >> /etc/nginx/conf.d/demo.conf
 
-echo "server {
+sudo echo "server {
     listen 443 ssl;
 
     server_name demo.algonquainlanguages.ca;
