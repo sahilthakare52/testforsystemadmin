@@ -6,6 +6,7 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" &&
     php -r "unlink('composer-setup.php');" && \
     cp composer.phar /usr/local/bin/composer 
 RUN php composer.phar create-project --prefer-dist cakephp/app:4.* cms -n 
+COPY ./app_config/config/* /cms/config/
 CMD cms/bin/cake server -H 0.0.0.0
 
 

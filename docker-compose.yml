@@ -6,7 +6,13 @@ services:
       - "9000:8765"
     volumes:
             - webapp_volume:/opt/webdata
-
+            - "./app_config/config:/cms/config"
+    links:
+      - "db:database"
+    depends_on:
+      - "db" 
+    networks:
+      - backend
   db:
     image: postgres
     environment:
@@ -18,8 +24,13 @@ services:
             - database_volume:/opt/dbdata
             - "./postgres/postgres.conf:/usr/local/etc/postgres/postgres.conf"
             - "./postgres/data:/var/lib/postgresql/data:delegated"
+    networks:
+            backend:
+                    aliases:
+                           - psql 
 
 volumes:
   webapp_volume:
   database_volume:
-
+networks:
+   backend:
