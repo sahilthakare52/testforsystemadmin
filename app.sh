@@ -31,22 +31,4 @@ echo "dding server block to transfer all the http requests to https for https://
 
 
 ## adding server block to transfer all the http requests to https for https://demo.algonquainlanguages.ca
-sudo touch /etc/nginx/conf.d/demo.conf
-sudo echo "server {
-    listen 80;
-    server_name demo.algonquainlanguages.ca;
-    return 301 https://demo.algonquainlanguages.ca$request_uri;
-}" >> /etc/nginx/conf.d/demo.conf
-
-sudo echo "server {
-    listen 443 ssl;
-
-    server_name demo.algonquainlanguages.ca;
-
-    ssl_certificate ...;
-    ssl_certificate_key ...;
-
-    location / {
-        proxy_pass http://127.0.0.1:9000;
-    }
-}" >> /etc/nginx/conf.d/demo.conf
+sudo cp demo.conf /etc/nginx/conf.d/
