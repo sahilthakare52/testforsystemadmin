@@ -5,7 +5,7 @@ services:
     ports:
       - "9000:8765"
     volumes:
-            - webapp_volume:/opt/webdata
+            - webapp_volume:/cms
             - "./app_config/config:/cms/config"
     links:
       - "db:database"
@@ -18,10 +18,11 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=cake
     ports:
       - '5432:5432'
     volumes:
-            - database_volume:/opt/dbdata
+            - database_volume:/var/lib/postgresql/data
             - "./postgres/postgres.conf:/usr/local/etc/postgres/postgres.conf"
     networks:
             backend:
