@@ -5,7 +5,7 @@ echo "==========================================================================
 
 echo "checking the prerequisites- nginx and docker installations..."
 ## checking if the nginx is installed if not install the nginx on server
-sudo apt-update -y
+sudo apt update -y
 which nginx
 output=$?
 [ $output = 0 ] && echo "nginx is already installed moving to the next step" || sudo apt install nginx -y 
