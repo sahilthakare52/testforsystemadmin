@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+  web:
+    build: .      
+    ports:
+      - "9000:8765"
+    volumes:
+            - webapp_volume:/opt/webdata
+
+  db:
+    image: postgres
+    volumes:
+            - database_volume:/opt/dbdata
+
+volumes:
+  webapp_volume:
+  database_volume:
+
