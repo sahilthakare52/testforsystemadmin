@@ -27,7 +27,7 @@ sudo docker compose up -d
 echo "===================================================================================\n
       ==================================================================================="
 
-echo "dding server block to transfer all the http requests to https for https://demo.algonquainlanguages.ca"      
+echo "Adding server block to transfer all the http requests to https for https://demo.algonquainlanguages.ca"      
 
 
 ## adding server block to transfer all the http requests to https for https://demo.algonquainlanguages.ca
