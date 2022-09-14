@@ -35,7 +35,7 @@ echo "Adding server block to transfer all the http requests to https for https:/
 
 
 ## adding server block to transfer all the http requests to https for https://demo.algonquainlanguages.ca
-sudo cp demo.conf /etc/nginx/conf.d/
+sudo cp demo.conf /etc/nginx/sites-available
 
 echo "=================##############Installation successful#################"
 
